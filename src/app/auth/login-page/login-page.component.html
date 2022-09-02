@@ -5,6 +5,19 @@
     <div class="divider"></div>
 
     <h2 class="welcome-text">Halo, Silakan Masuk</h2>
+
+    <div class="alert" *ngIf="isAlertShow">
+      <div (click)="handleHideAlert()">
+        <svg-icon src="../../../assets/icons/iconClear.svg"></svg-icon>
+      </div>
+      <p
+        class="alert-title"
+        style="flex: 1; margin-left: 20px; margin-top: 12px"
+      >
+        Email atau password anda salah
+      </p>
+    </div>
+
     <form (ngSubmit)="handleSubmit()" [formGroup]="form" class="form-container">
       <div class="input-container">
         <label for="email" class="-mb-4 text-sm font-semibold text-black"
@@ -21,9 +34,12 @@
             formControlName="email"
             placeholder="Masukan email anda"
           />
-          <mat-icon (click)="handleShowPassword()" matSuffix class="icon-clear">{{
-            isVisible ? "clear" : "visibility_off"
-          }}</mat-icon>
+          <mat-icon
+            (click)="handleShowPassword()"
+            matSuffix
+            class="icon-clear"
+            >{{ isVisible ? "clear" : "visibility_off" }}</mat-icon
+          >
         </mat-form-field>
       </div>
       <div class="input-container">

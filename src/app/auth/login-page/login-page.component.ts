@@ -12,6 +12,7 @@ export class LoginPageComponent implements OnInit {
     password: new FormControl('', [Validators.required]),
   });
   isVisible: boolean = false;
+  isAlertShow: boolean = false
 
   constructor() {}
 
@@ -19,6 +20,7 @@ export class LoginPageComponent implements OnInit {
 
   handleSubmit = () => {
     if (this.form.invalid) {
+      this.isAlertShow = true
       Object.keys(this.form.controls).forEach((field) => {
         const control: any = this.form.get(field);
         control.markAsTouched({ onlySelf: true });
@@ -31,4 +33,8 @@ export class LoginPageComponent implements OnInit {
   handleShowPassword = () => {
     this.isVisible = !this.isVisible;
   };
+
+  handleHideAlert = () => {
+    this.isAlertShow = false
+  }
 }
