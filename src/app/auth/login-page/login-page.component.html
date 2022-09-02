@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="left-side">
+    <h5 class="sfa-text">Sfa.</h5>
+    <p class="spa-name">Sales Force Automation</p>
+    <div class="divider"></div>
+
+    <h2 class="welcome-text">Halo, Silakan Masuk</h2>
+    <form (ngSubmit)="handleSubmit()" [formGroup]="form" class="form-container">
+      <div class="input-container">
+        <label for="email" class="-mb-4 text-sm font-semibold text-black"
+          >Email</label
+        >
+        <mat-form-field
+          class="input"
+          floatLabel="never"
+          class="example-not-full-width"
+        >
+          <input
+            matInput
+            type="text"
+            formControlName="email"
+            placeholder="Masukan email anda"
+          />
+          <mat-icon (click)="handleShowPassword()" matSuffix class="icon-clear">{{
+            isVisible ? "clear" : "visibility_off"
+          }}</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="input-container">
+        <label for="password" class="-mb-4 text-sm font-semibold text-black"
+          >Password</label
+        >
+        <mat-form-field floatLabel="never" class="example-not-full-width">
+          <input
+            matInput
+            placeholder="Masukan kata sandi anda"
+            [type]="isVisible ? 'password' : 'text'"
+            formControlName="password"
+          />
+          <mat-icon (click)="handleShowPassword()" matSuffix class="icon">{{
+            isVisible ? "visibility" : "visibility_off"
+          }}</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="lupa-kata-sandi-container">
+        <p class="lupa-kata-sandi-text">Lupa Kata Sandi?</p>
+      </div>
+
+      <div style="width: 100%; margin-top: -20px">
+        <button type="submit" class="btn-signin" mat-button color="primary">
+          Masuk
+        </button>
+      </div>
+    </form>
+  </div>
+  <div class="right-side">
+    <svg-icon class="svg" src="../../../assets/images/loginIcon.svg"></svg-icon>
+  </div>
+</div>
