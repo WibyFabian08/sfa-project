@@ -18,6 +18,10 @@ import {
   DEFAULT_ERROR_MESSAGES,
   MinError,
 } from 'ngx-mat-errors';
+import { ForgotPasswordPageComponent } from './forgot-password-page/forgot-password-page.component';
+import { ModalSuccessSendEmailComponent } from './component/modal-success-send-email/modal-success-send-email.component';
+import { ResetPasswordPageComponent } from './reset-password-page/reset-password-page.component';
+import { ModalSuccessResetPasswordComponent } from './component/modal-success-reset-password/modal-success-reset-password.component';
 
 export const NGX_MAT_ERROR_DEFAULT_CONFIG: Provider = {
   useFactory: () => {
@@ -31,7 +35,14 @@ export const NGX_MAT_ERROR_DEFAULT_CONFIG: Provider = {
 };
 
 @NgModule({
-  declarations: [AuthComponent, LoginPageComponent],
+  declarations: [
+    AuthComponent,
+    LoginPageComponent,
+    ForgotPasswordPageComponent,
+    ModalSuccessSendEmailComponent,
+    ResetPasswordPageComponent,
+    ModalSuccessResetPasswordComponent,
+  ],
   imports: [
     CommonModule,
     AuthRoutingModule,
@@ -42,7 +53,8 @@ export const NGX_MAT_ERROR_DEFAULT_CONFIG: Provider = {
     HttpClientModule,
     AngularSvgIconModule.forRoot(),
     NgxMatErrorsModule,
-    FormsModule, ReactiveFormsModule
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [NGX_MAT_ERROR_DEFAULT_CONFIG],
 })

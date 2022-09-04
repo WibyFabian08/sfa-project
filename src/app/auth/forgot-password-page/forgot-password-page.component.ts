@@ -1,30 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalSuccessSendEmailComponent } from '../component/modal-success-send-email/modal-success-send-email.component';
 
 @Component({
-  selector: 'app-login-page',
-  templateUrl: './login-page.component.html',
-  styleUrls: ['./login-page.component.css'],
+  selector: 'app-forgot-password-page',
+  templateUrl: './forgot-password-page.component.html',
+  styleUrls: ['./forgot-password-page.component.css']
 })
-export class LoginPageComponent implements OnInit {
+export class ForgotPasswordPageComponent implements OnInit {
+
   form = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required]),
   });
-  isVisible: boolean = true;
+  isVisible: boolean = false;
   isAlertShow: boolean = false
   isEmailValid: boolean = true
-  iconPasswordColor: string = "icon"
 
-  constructor() {}
+  constructor(
+    private dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {}
 
   handleSubmit = () => {
+    this.isEmailValid = false
     if (this.form.invalid) {
       this.isAlertShow = true
-      this.isEmailValid = false
-      this.iconPasswordColor = "icon-red"
       Object.keys(this.form.controls).forEach((field) => {
         const control: any = this.form.get(field);
         control.markAsTouched({ onlySelf: true });
@@ -34,11 +36,14 @@ export class LoginPageComponent implements OnInit {
     }
   };
 
-  handleShowPassword = () => {
-    this.isVisible = !this.isVisible;
-  };
-
   handleHideAlert = () => {
     this.isAlertShow = false
   }
+
+  openDialog() {
+    this.dialog.open(ModalSuccessSendEmailComponent, {
+      panelClass: "custom-dialog"
+    })
+  }
+
 }

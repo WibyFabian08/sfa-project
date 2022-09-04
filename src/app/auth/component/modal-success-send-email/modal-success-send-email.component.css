@@ -1,0 +1,42 @@
+.modal-contianer {
+  background-color: #ffffff;
+  border-radius: 8px;
+  width: 364px;
+  height: 422px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* padding: 48px 65px; */
+}
+
+.success-text {
+  color: #27292a;
+  font-family: "DM Sans", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+}
+
+p {
+  color: #c0c4c4;
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.btn-back {
+  width: 140px;
+  background-color: #ad0000;
+  border-radius: 8px;
+  height: 40px;
+  color: white;
+  margin-top: 36px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: center;
+  font-weight: bold;
+}
