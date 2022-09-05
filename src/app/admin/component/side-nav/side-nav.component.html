@@ -1,0 +1,67 @@
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed' : ''">
+  <div class="top-side">
+    <div class="top">
+      <button class="logo" (click)="toggleCollapse()">Sfa.</button>
+      <button
+      class="btn-close"
+      @rotate
+      *ngIf="collapsed"
+      (click)="closeSidenav()"
+    >
+    <mat-icon matSuffix>clear</mat-icon>
+    </button>
+    </div>
+    <div class="bottom">
+      <div class="image-container">
+        <img
+          *ngIf="collapsed"
+          @fadeInOut
+          class="image-profile"
+          src="../../../../assets/images/profile.png"
+          alt=""
+        />
+      </div>
+      <h5 class="profile-name" @fadeInOut>Homayoun Shakibaii</h5>
+      <p class="profesion" @fadeInOut>Branch Admin</p>
+    </div>
+
+    <div style="padding: 0px 16px">
+      <div class="divider"></div>
+    </div>
+
+    <!-- <div (click)="toggleCollapse()"  @fadeInOut *ngIf="collapsed" class="logo-container">
+        <h5 class="logo-text">Sfa.</h5>
+    </div> -->
+
+    <!-- <div (click)="toggleCollapse()" class="logo-container" @fadeInOut *ngIf="collapsed">
+        <h5 class="logo-text">Sfa.</h5>
+    </div> -->
+
+    
+  </div>
+  <div class="bottom-side">
+    <p class="menu">Menu</p>
+    <ul class="sidenav-nav">
+      <li class="sidenav-nav-item" *ngFor="let data of navData">
+        <a
+          class="sidenav-nav-link"
+          [routerLink]="[data.routeLink]"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <mat-icon class="sidenav-link-icon" matSuffix>{{
+            data.icon && data.icon
+          }}</mat-icon>
+          <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+            {{ data.label }}
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div style="padding: 24px">
+    <button (click)="handleLogout()" mat-button class="btn-logout">
+      Logout
+    </button>
+  </div>
+</div>

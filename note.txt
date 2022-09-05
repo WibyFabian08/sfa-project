@@ -1,0 +1,354 @@
+// sidenav css
+.sidenav {
+  background: #fff;
+  transition: all 0.5s ease;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 6rem;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.sidenav-collapsed {
+  width: 280px;
+}
+.top-side {
+  height: 280px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  background-color: #c20000;
+  height: 50%;
+  padding: 16px;
+}
+
+.bottom {
+  padding: 16px;
+  height: 50%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-container {
+    margin-top: -60px;
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.image-profile {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.profile-name {
+    margin-top: 15px;
+    color: #27292A;
+    font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.profesion {
+    color: #AD0000;
+    font-family: "DM Sans", sans-serif;
+    font-size: 11px;
+    line-height: 13px;
+    text-align: center;
+    margin-top: -5px;
+}
+
+.divider {
+  border: 1px dashed #dedede;
+  width: 248px;
+  margin-top: -20px;
+}
+
+.logo-container {
+  width: 84px;
+  height: 38px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.logo-text {
+  color: #ef2f2f;
+  font-family: "DM Sans", sans-serif;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: left;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.logo {
+  background: #fff;
+  text-align: center;
+  width: 3rem;
+  min-width: 3rem;
+  border-radius: 0.313rem;
+  padding: 0.313rem;
+  font-size: 24px;
+  font-weight: 900;
+  cursor: pointer;
+  border: none;
+}
+
+.sidenav-nav {
+  list-style: none;
+  padding: 0.938rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* height: calc(100% - 3.65rem); */
+  cursor: pointer;
+  /* padding-bottom: 200px; */
+}
+
+.active {
+  background-color: #fff;
+}
+
+.logo-container {
+  background: #fff;
+  text-align: center;
+  width: 3rem;
+  min-width: 3rem;
+  border-radius: 0.313rem;
+  padding: 0.313rem;
+  font-size: 24px;
+  font-weight: 900;
+  cursor: pointer;
+  border: none;
+}
+
+.logo-text {
+  margin-left: 1.5rem;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.btn-close {
+  margin-left: auto;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: transparent;
+  border: none;
+}
+
+.fa-times {
+  color: #fff;
+  font-size: 24px;
+}
+
+.logo-container {
+  display: flex;
+  background-color: #c20000;
+  height: 120px;
+  padding: 0.938rem 0.938rem 0 0.938rem;
+  width: 100%;
+}
+
+.sidenav-link-text {
+  margin-left: 1.5rem;
+}
+
+.sidenav-link-icon {
+  font-size: 22px;
+  width: 2rem;
+  min-width: 2rem;
+  margin: 0 0.5rem;
+  text-align: center;
+}
+
+.sidenav-link-icon,
+.sidenav-link-text {
+  color: #000;
+}
+
+.sidenav-nav-item:hover,
+.sidenav-nav-link {
+  background-color: #fff;
+  color: #000;
+}
+
+.sidenav-nav-link {
+  display: flex;
+  align-items: center;
+  height: 3rem;
+  color: #f3f3f3;
+  text-decoration: none;
+  border-radius: 0.625rem;
+  transition: all 0.3s ease;
+}
+
+.sidenav-nav-item {
+  width: 100%;
+  margin-bottom: 0.625rem;
+}
+
+/* scroll bar custom */
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background-color: #FCF6F3;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #FFF8EB;
+  }
+
+
+  // side nav html
+  <div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed' : ''">
+  <div class="top-side">
+    <div class="top">
+      <button class="logo" (click)="toggleCollapse()">A</button>
+    </div>
+    <div class="bottom">
+        <div class="image-container">
+            <img class="image-profile" src="../../../../assets/images/profile.png" alt="">
+        </div>
+        <h5 class="profile-name">Homayoun Shakibaii</h5>
+        <p class="profesion">Branch Admin</p>
+    </div>
+
+    <div style="padding: 0px 16px">
+      <div class="divider"></div>
+    </div>
+    <!-- <div (click)="toggleCollapse()"  @fadeInOut *ngIf="collapsed" class="logo-container">
+        <h5 class="logo-text">Sfa.</h5>
+    </div> -->
+
+    <!-- <div (click)="toggleCollapse()" class="logo-container" @fadeInOut *ngIf="collapsed">
+        <h5 class="logo-text">Sfa.</h5>
+    </div> -->
+
+    <!-- <button
+      class="btn-close"
+      @rotate
+      *ngIf="collapsed"
+      (click)="closeSidenav()"
+    >
+      Close
+    </button> -->
+  </div>
+  <div></div>
+  <ul class="sidenav-nav">
+    <li class="sidenav-nav-item" *ngFor="let data of navData">
+      <a
+        class="sidenav-nav-link"
+        [routerLink]="[data.routeLink]"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        <i class="sidenav-link-icon" [class]="data.icon"></i>
+        <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
+          {{ data.label }}
+        </span>
+      </a>
+      <ul
+        *ngIf="collapsed && data.submenuLevel1 && data.submenuLevel1.length > 0"
+        [ngStyle]="{ 'margin-left': '80px' }"
+      >
+        <li *ngFor="let sub1 of data.submenuLevel1">
+          <a [routerLink]="[sub1.routeLink]">
+            <span>{{ sub1.label }}</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+// side nav ts
+import { animate, keyframes, style, transition, trigger } from '@angular/animations';
+import { Component, Output, EventEmitter, OnInit, HostListener } from '@angular/core';
+import { navbarData } from './nav-data';
+
+interface SideNavToggle {
+  screenWidth: number;
+  collapsed: boolean;
+}
+
+@Component({
+  selector: 'app-sidenav',
+  templateUrl: './side-nav.component.html',
+  styleUrls: ['./side-nav.component.css'],
+  animations: [
+    trigger('fadeInOut', [
+      transition(':enter', [
+        style({opacity: 0}),
+        animate('350ms',
+          style({opacity: 1})
+        )
+      ]),
+      transition(':leave', [
+        style({opacity: 1}),
+        animate('350ms',
+          style({opacity: 0})
+        )
+      ])
+    ]),
+    trigger('rotate', [
+      transition(':enter', [
+        animate('1000ms', 
+          keyframes([
+            style({transform: 'rotate(0deg)', offset: '0'}),
+            style({transform: 'rotate(2turn)', offset: '1'})
+          ])
+        )
+      ])
+    ])
+  ]
+})
+export class SidenavComponent implements OnInit {
+
+  @Output() onToggleSideNav: EventEmitter<SideNavToggle> = new EventEmitter();
+  collapsed = false;
+  screenWidth = 0;
+  navData = navbarData;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.screenWidth = window.innerWidth;
+    if(this.screenWidth <= 768 ) {
+      this.collapsed = false;
+      this.onToggleSideNav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
+    }
+  }
+
+  ngOnInit(): void {
+      this.screenWidth = window.innerWidth;
+  }
+
+  toggleCollapse(): void {
+    this.collapsed = !this.collapsed;
+    this.onToggleSideNav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
+  }
+
+  closeSidenav(): void {
+    this.collapsed = false;
+    this.onToggleSideNav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
+  }
+}
+
+

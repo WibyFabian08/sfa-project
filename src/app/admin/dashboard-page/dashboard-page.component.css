@@ -1,0 +1,41 @@
+table {
+  width: 100%;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+.myChart {
+  max-height: 139px;
+}
+
+.chart-container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 23px 26px;
+}
+
+.chart-title {
+  color: #27292A;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 53px;
+}
+
+.chart-content {
+  height: 139px;
+}
+
+.chart-info {
+  margin-top: 42px;
+}
+
+.divider {
+  border: 1px dashed #dedede;
+  width: 100%;
+  margin: 25px 0px;
+}

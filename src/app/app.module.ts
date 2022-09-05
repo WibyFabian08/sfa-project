@@ -7,6 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 @NgModule({
   declarations: [AppComponent, NotFoundComponent],
@@ -16,6 +19,7 @@ import { MatMenuModule } from '@angular/material/menu';
     BrowserAnimationsModule,
     MatDialogModule,
     MatMenuModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

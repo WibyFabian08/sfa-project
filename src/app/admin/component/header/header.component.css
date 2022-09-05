@@ -1,0 +1,41 @@
+.nav-container {
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-container {
+    margin-right: 16px;
+}
+
+.title {
+  color: #27292a;
+  font-family: "DM Sans", sans-serif;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: left;
+  font-weight: bold;
+  margin: 0;
+}
+
+.sub-title {
+    margin: 0;
+  color: #c0c4c4;
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: left;
+}
+
+.right-side {
+}

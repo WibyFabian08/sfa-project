@@ -7,14 +7,14 @@
     <h2 class="welcome-text">Halo, Silakan Masuk</h2>
 
     <div class="alert" *ngIf="isAlertShow">
-      <div style="margin-left: 20px;" (click)="handleHideAlert()">
+      <div style="margin-left: 20px" (click)="handleHideAlert()">
         <svg-icon src="../../../assets/icons/iconClear.svg"></svg-icon>
       </div>
       <p
         class="alert-title"
         style="flex: 1; margin-left: 20px; margin-top: 12px"
       >
-        Email dan Kata Sandi yang dimasukan salah
+        {{ alertMessage }}
       </p>
     </div>
 
@@ -53,18 +53,29 @@
             [type]="isVisible ? 'password' : 'text'"
             formControlName="password"
           />
-          <mat-icon (click)="handleShowPassword()" matSuffix [ngClass]="iconPasswordColor">{{
-            isVisible ? "visibility" : "visibility_off"
-          }}</mat-icon>
+          <mat-icon
+            (click)="handleShowPassword()"
+            matSuffix
+            [ngClass]="iconPasswordColor"
+            >{{ isVisible ? "visibility" : "visibility_off" }}</mat-icon
+          >
         </mat-form-field>
       </div>
       <div class="lupa-kata-sandi-container">
-        <a routerLink="/auth/forgot-password" class="lupa-kata-sandi-text">Lupa Kata Sandi?</a>
+        <a routerLink="/auth/forgot-password" class="lupa-kata-sandi-text"
+          >Lupa Kata Sandi?</a
+        >
       </div>
 
       <div style="width: 100%; margin-top: -20px">
-        <button type="submit" class="btn-signin" mat-button color="primary">
-          Masuk
+        <button
+          [disabled]="isLoading"
+          type="submit"
+          class="btn-signin"
+          mat-button
+          color="primary"
+        >
+          {{ isLoading ? "Loading..." : "Masuk" }}
         </button>
       </div>
     </form>
